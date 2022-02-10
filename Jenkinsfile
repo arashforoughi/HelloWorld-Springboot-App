@@ -14,7 +14,7 @@ pipeline{
         }
         stage('Create Dockerimage'){
             steps{
-                sh 'docker build -t 9354165450/springboot:latest .'
+                sh 'docker build -t springboot:latest .'
             }
         }
         
