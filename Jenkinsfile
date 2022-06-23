@@ -14,9 +14,18 @@ pipeline{
         }
         stage('Create Dockerimage'){
             steps{
-                sh 'docker build -t springboot:latest .'
+                sh 'sudo docker build -t springboot:latest .'
             }
         }
-        
+        stage('docker tag'){
+            steps{
+                sh 'sudo docker tag springboot:latest 9354165450/jenkins-test:latest'
+            }
+        }
+        stage('docker push'){
+            steps{
+                sh 'sudo docker push 9354165450/jenkins-test:latest'
+            }
+        }
     }
 }
