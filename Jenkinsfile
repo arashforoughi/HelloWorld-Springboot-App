@@ -27,5 +27,10 @@ pipeline{
                 sh 'sudo docker push 9354165450/jenkins-test:latest'
             }
         }
+        stage('create pod'){
+            steps{
+                sh 'sudo kubectl apply -f pod.yaml'
+            }
+        }
     }
 }
