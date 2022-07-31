@@ -6,7 +6,6 @@ pipeline{
                 git 'https://github.com/arashforoughi/HelloWorld-Springboot-App.git'
             }
         }
-        
        
         stage('maven build'){
             steps{
