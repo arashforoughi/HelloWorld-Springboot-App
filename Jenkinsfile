@@ -1,7 +1,7 @@
 pipeline{
   
     agent {
-       label "${falccon-stg}"
+       label "${falcon-stg}"
     }
     
     stages{
