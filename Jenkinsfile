@@ -1,5 +1,5 @@
 pipeline{
-    agent { label 'falcon-stg' }
+    agent { label 'jenkins-master' }
     stages{
         stage('Git clone'){
             steps{
