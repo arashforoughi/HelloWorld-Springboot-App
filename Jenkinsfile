@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent { label 'falcon-stg' }
     stages{
         stage('Git clone'){
             steps{
