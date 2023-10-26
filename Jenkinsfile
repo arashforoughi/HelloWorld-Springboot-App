@@ -14,22 +14,22 @@ pipeline{
         }
         stage('Create Dockerimage'){
             steps{
-                sh 'sudo docker build -t springboot:latest .'
-            }
-        }
-        stage('docker tag'){
-            steps{
-                sh 'sudo docker tag springboot:latest 9354165450/jenkins-test:latest'
+                sh 'sudo docker build -t springboot:${BUILD_NUMBER} .'
             }
         }
         stage('docker push'){
             steps{
-                sh 'sudo docker push 9354165450/jenkins-test:latest'
+                sh 'sudo docker push springboot:latest'
+            }
+        }
+        stage('docker tag'){
+            steps{
+                sh 'sudo docker tag springboot:${BUILD_NUMBER} springboot:latest'
             }
         }
         stage('create pod'){
             steps{
-                sh 'sudo docker run -dit --name hello-world 9354165450/jenkins-test:latest'
+                sh 'sudo docker compose up -d'
             }
         }
     }
