@@ -8,10 +8,10 @@ services:
     expose:
       - "80"
     ports:
-      - 8080:80
+      - 8000:80
     volumes:
       - springboot-vol:/app
-    network:
+    networks:
       - springboot-net
 
 networks:
