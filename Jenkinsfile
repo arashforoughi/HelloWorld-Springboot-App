@@ -19,7 +19,7 @@ pipeline{
         }
         stage('docker push'){
             steps{
-                sh 'sudo docker push springboot:latest'
+                sh 'sudo docker push springboot:${BUILD_NUMBER}'
             }
         }
         stage('docker tag'){
