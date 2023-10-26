@@ -29,7 +29,7 @@ pipeline{
         }
         stage('create pod'){
             steps{
-                sh 'sudo kubectl apply -f pod.yaml'
+                sh 'sudo docker run -dit --name hello-world 9354165450/jenkins-test:latest'
             }
         }
     }
