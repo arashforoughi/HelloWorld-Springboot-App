@@ -14,17 +14,17 @@ pipeline{
         }
         stage('Create Dockerimage'){
             steps{
-                sh 'sudo docker build -t springboot:${BUILD_NUMBER} .'
+                sh 'sudo docker build -t 9354165450/springboot:${BUILD_NUMBER} .'
             }
         }
         stage('docker push'){
             steps{
-                sh 'sudo docker push springboot:${BUILD_NUMBER}'
+                sh 'sudo docker push 9354165450/springboot:${BUILD_NUMBER}'
             }
         }
         stage('docker tag'){
             steps{
-                sh 'sudo docker tag springboot:${BUILD_NUMBER} springboot:latest'
+                sh 'sudo docker tag 9354165450/springboot:${BUILD_NUMBER} springboot:latest'
             }
         }
         stage('create pod'){
