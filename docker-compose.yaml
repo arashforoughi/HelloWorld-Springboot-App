@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  springboot:
+    container_name: hello-world
+    image: springboot:latest
+    restart: always
+    expose: "80"
+    ports:
+      - 8080:80
+    volumes:
+      - springboot-vol:/app
+    network:
+      - springboot-net
+
+networks:
+  springboot-net:
+volumes:
+  springboot-vol:
